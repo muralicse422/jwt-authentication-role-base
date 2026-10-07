@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: Authentication
+  database:
+    url: ${DB_URL}
+    username: ${username}
+    password: ${password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        formate-sql:false
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+  server:
+    post: ${SERVER_PORT:8080}
+
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration: ${JWT_EXPIRATION:1800000}
